@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script> -->
+
+  <!-- <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script> -->
+  <!-- <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script> --> -->
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+  <script src="https://unpkg.com/ml5@0.5.0/dist/ml5.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="demo.css">
+  <meta charset="utf-8" />
+  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+  <link rel="stylesheet" href="index.css">
+
+  
+  <!-- or include it directly from a CDN <script src="bower_packages/numjs/dist/numjs.min.js"  <script src="https://cdn.jsdelivr.net/gh/nicolaspanel/numjs@0.15.1/dist/numjs.min.js"></script> ></script> -->
+  
+
+
+
+
+  <body>
+
+    <div class="heading">
+      <h1> Virtual Workout Trainer </h1>
+      <h4> An  AI based Virtuak Trainee to train you at home 😉</h4>
+      
+    </div>
+
+      <a href="../welcomepage.html" class="button"><button>Back To welcomepage </button></a>
+<!-- 
+      <h3>DAY : 2 </h3> -->
+
+      <div class="instructions">
+        <h2> INSTRUCTIONS :</h2>
+        <ol>
+          <li> Select  start a worlout serially and complete it .</li>
+          <li> Count of reps will be displayed on screen at left corner .</li>
+          <li> Your all moves will be classified automatically .</li>
+          <li> Whatever error while performing workout will displayed on the form of dots and line </li>
+          <li> To minimize error you have to follow one of the dots and error will be gone result in PERFECT POSE </li>
+        </ol>
+        <h3> Keep Calm and Work Hard  </h3>
+      </div>
+
+      
+    <div class="main">
+  
+        <div class="box" id="todo"> 
+          <div id ="myDiv" >
+            <h1>TO DO Today : </h1>
+            <ol>
+  
+              <li >
+                  <div class="flex-box">
+                    <p>SQUATS</p>  
+                    <button class="btn active" onclick="startClassify('squat' , 2,0)" > Start </button>
+                  </div>
+                  
+                  <div class="flex-box">
+                    <p>Assigned sets : </p>  
+                    <p id="squat-sets">  ""</p>
+                  </div>
+                  <div class="flex-box">
+                    <p>Completed Sets : </p>  
+                    <p id="squat-completed-sets">  1</p>
+                  </div>
+
+                  <div class="flex-box">
+                    <p>Assigned reps : </p>  
+                    <p id="squat-reps">  ""</p>
+                  </div>
+                  <div class="flex-box">
+                    <p>Completed Reps : </p>  
+                    <p id="squat-completed-reps"> :  1</p>
+                  </div>
+                  
+  
+              </li>
+              <li>  
+                <div class="flex-box">
+                  <p>PUSH UPS</p>  
+                  <button class="btn active" onclick="startClassify('pushup' , 2,1)" > Start </button>
+                </div>
+                
+                <div class="flex-box">
+                  <p>Assigned sets : </p>  
+                  <p id="pushup-sets">  ""</p>
+                </div>
+                <div class="flex-box">
+                  <p>Completed Sets : </p>  
+                  <p id="pushup-completed-sets">  1</p>
+                </div>
+
+                <div class="flex-box">
+                  <p>Assigned reps : </p>  
+                  <p id="pushup-reps">  ""</p>
+                </div>
+                <div class="flex-box">
+                  <p>Completed Reps : </p>  
+                  <p id="pushup-completed-reps"> :  1</p>
+                </div>
+               
+              </li>
+              
+              <li>
+                <div class="flex-box">
+                  <p>SIT UPS</p>  
+                  <button class="btn active" onclick="startClassify('situp' , 2,2)" > Start </button>
+                </div>
+                
+                <div class="flex-box">
+                  <p>Assigned sets : </p>  
+                  <p id="situp-sets">  ""</p>
+                </div>
+                <div class="flex-box">
+                  <p>Completed Sets : </p>  
+                  <p id="situp-completed-sets">  1</p>
+                </div>
+
+                <div class="flex-box">
+                  <p>Assigned reps : </p>  
+                  <p id="situp-reps">  ""</p>
+                </div>
+                <div class="flex-box">
+                  <p>Completed Reps : </p>  
+                  <p id="situp-completed-reps"> :  1</p>
+                </div>
+               
+              </li>
+              
+              <li>
+                <div class="flex-box">
+                  <p>STANDING CLIMB</p>  
+                  <button class="btn active" onclick="startClassify('standingclimb' , 2,3)" > Start </button>
+                </div>
+                
+                <div class="flex-box">
+                  <p>Assigned sets : </p>  
+                  <p id="standingclimb-sets">  ""</p>
+                </div>
+                <div class="flex-box">
+                  <p>Completed Sets : </p>  
+                  <p id="standingclimb-completed-sets">  1</p>
+                </div>
+
+                <div class="flex-box">
+                  <p>Assigned reps : </p>  
+                  <p id="standingclimb-reps">  ""</p>
+                </div>
+                <div class="flex-box">
+                  <p>Completed Reps : </p>  
+                  <p id="standingclimb-completed-reps"> :  1</p>
+                </div>
+               
+              </li>
+
+            </ol>
+       
+            <button onclick="giveSummary()">END </button>
+            <script>
+           
+            </script>
+        </div>
+  
+        </div>
+
+
+        <div class="canvas-box">
+          
+          <div  id ="canvas">  </div>
+
+          
+
+        </div>
+        
+
+        <div class="box" id="instruction">
+
+
+          <div class="screenshots" id="screenshots"> 
+            <div class ="align">
+              <h4> ==  Positions To Consider ==</h4>
+              <div class= "screenshots ">
+
+                  <img id="img1" src="../blank.png" class="img1" />
+                  <img id="img2" src="../blank.png" class="img1" />
+  
+              
+              </div>
+
+            </div>
+          </div>
+
+          <!-- <div>
+            <div>
+              <h3>Current Workout</h3>
+              <p> Push Ups</p>
+            </div>
+    
+            <div id = "canvas1"></div>
+            
+            <div>
+              <h3> Instructions</h3>
+              <p>  </p>
+            </div>
+    
+          </div> -->
+        </div>
+
+     </div>
+
+    <div class="summary" id="summary">
+      <div>
+        <h1> SUMMARY : </h1>
+        <h2>Today's Workout </h2>
+        <!-- <button class= "btn" onclick = "jeetkarasta(2)">submit</button> -->
+        <div id="summary-output"></div>
+      </div>
+    </div>
+
+    <div class="improvement">
+      <div class="previous"  id="previous">
+        <h2>Previous Data</h2>
+      </div>
+
+      <hr>
+      <div  class="improvement-box" id="improvement">
+        <h2> Improvement Data</h2>
+      </div>
+
+    </div>
+
+
+    <!-- <script type="text/babel" src="app.js"></script> -->
+    <script  src="demo.js"></script>
+
+  </body>
+</html>

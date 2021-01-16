@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+  <script src="https://unpkg.com/ml5@0.5.0/dist/ml5.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="demo.css">
+  <meta charset="utf-8" />
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div>
+        <h1 class="text-center display-1 text-success ">Loading Model</h1>
+        <br>
+        <marquee>Collect data , train data , load Model 😉</marquee>
+        <hr class="solid ">
+        
+    </div>
+    <div>
+        
+        <a href="../welcomepage.html" class="button"><button>Back To welcomepage </button></a>
+    </div>
+    <div id="classifyingModel" class="container tab-pane active"><br>
+      <label for="class"> Add Workout</label>
+      <input type="text" id="class">
+      <label for="outputs"> Add numbner of output class</label>
+      <input type="text" id="outputs">
+      <button onclick="startClassify()">Classify</button>
+      <div>
+    
+        
+      <div  id ="canvas" class="text-center">  </div>
+  <script src="demo.js"></script>
+</body>
+
+</html>

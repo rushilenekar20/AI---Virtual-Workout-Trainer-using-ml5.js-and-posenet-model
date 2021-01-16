@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+  <script src="https://unpkg.com/ml5@0.5.0/dist/ml5.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="demo.css">
+  <meta charset="utf-8" />
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+   
+    <div>
+        <h1 class="text-center display-1 text-success ">Training the Data</h1>
+        <br>
+        <marquee>Collect data , train data , load Model 😉</marquee>
+        <hr class="solid ">
+        
+    </div>
+    <div>
+        
+        <a href="../welcomepage.html" class="button"><button>Back To welcomepage </button></a>
+        </div>
+    
+        
+      <div  id ="canvas" class="text-center">  </div>
+    <div id="container" >
+
+        <ul class="nav nav-tabs text-center" role="tablist">
+           
+            <li class="nav-item active">
+            <a class="nav-link" data-toggle="tab" href="#collectdata">Collect Data</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#traindata">Train The Data</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link " data-toggle="tab" href="#loadmodel">Load Model</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="collectdata" class="container tab-pane active"><br>
+                <label for="class"> Add Workout</label>
+                <input type="text" id="class">
+                <label for="outputs"> Add numbner of output class</label>
+                <input type="text" id="outputs">
+                <button onclick="collectdata()">Collect Data</button>
+                <div>
+                    <h3>Console :</h3>
+                    <ul id ="console1">
+                    </ul>
+                </div>
+            </div>
+
+            <div id="traindata" class="container tab-pane fade "><br>
+                <label for="class"> Model Name </label>
+                <input type="text" id="Tclass">
+
+                <label for="outputs"> Enter outputs </label>
+                <input type="text" id="Toutputs">
+                <button onclick="TrainModelButton()">Train Model </button>
+           
+               
+            </div>
+
+
+
+            <div id="loadmodel" class="container tab-pane fade"><br>
+                <label for="class"> load</label>
+                <input type="text" id="class">
+                <a href="demo.html"><button onclick="loadModelButton()">Load Model</button></a>
+           
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+  <script src="train.js"></script>
+</body>
+
+</html>

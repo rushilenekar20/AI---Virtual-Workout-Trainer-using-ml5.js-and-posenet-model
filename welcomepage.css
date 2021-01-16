@@ -1,0 +1,36 @@
+.main{
+    padding: 30px;
+    margin: 15%  auto;
+    text-align: center;
+    border: 1px  black solid;
+    border-radius: 30px;
+    width: 50%;
+    height: 30%;
+    background-color: #203647;
+}
+
+.flex{
+    display: flex;
+    text-align: center;
+    padding: 50px;
+
+}
+
+h2{
+    color: white;
+}
+
+.nav{
+    margin: 0 auto;
+}
+
+button{
+    padding: 10px;
+    border-radius: 20px;
+    outline: none;
+}
+
+button:hover {
+    background-color: #666;
+    color: white;
+  }
